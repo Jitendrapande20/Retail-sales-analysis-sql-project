@@ -90,13 +90,14 @@ WHERE
 ```
 
 3. **Write a SQL query to calculate the total sales (total_sale) for each category.**:
-```sql
+```
 SELECT 
-    category,
-    SUM(total_sale) as net_sale,
-    COUNT(*) as total_orders
-FROM retail_sales
-GROUP BY 1
+category, # if we have to go within the column declare in select 1 or more col
+gender,
+COUNT(*) AS tran_count
+FROM retailsales
+GROUP BY category,gender 
+ORDER BY 1;
 ```
 
 4. **Write a SQL query to find the average age of customers who purchased items from the 'Beauty' category.**:
